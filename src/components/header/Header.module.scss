@@ -1,0 +1,79 @@
+@use "../../variaveis.scss" as *;
+
+.header {
+  background-color: #061009;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px clamp(20px, 5vw, 70px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: solid 2px $yellow;
+}
+
+.headerLogo {
+  .logoLink {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+
+    img {
+      width: clamp(44px, 8vw, 70px);
+      height: clamp(44px, 8vw, 70px);
+      object-fit: contain;
+      display: block;
+    }
+
+    h1 {
+      color: $yellow;
+      font-size: clamp(0.875rem, 2vw, 1.125rem);
+      margin: 0;
+    }
+  }
+}
+
+.navbar {
+  display: flex;
+  gap: 12px;
+
+  .link {
+    color: #fff;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+
+  .linkAtivo {
+    color: $yellow;
+    border-bottom: 2px solid $yellow;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .navbar {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 12px;
+  }
+}
