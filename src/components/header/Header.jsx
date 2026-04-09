@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import s from "./Header.module.scss";
-import logoCBF from "../../assets/icons/logoCBF.webp";
+import logoCBF from "../../assets/icons/logoCBF.png";
 
 const Header = () => {
   return (

@@ -1,5 +1,5 @@
 import s from "./Home.module.scss";
-import logoCBF from "../../assets/icons/logoCBF.webp";
+import logoCBF from "../../assets/icons/logoCBF.png";
 
 const Home = () => {
   return (
