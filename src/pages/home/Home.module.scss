@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(40px, 6vh, 80px) clamp(32px, 8vw, 120px);
+  padding: $paddingGlobal;
 
   background: linear-gradient(
     90deg,
@@ -29,7 +29,7 @@
   }
 }
 
-.boxText {
+.textosHome {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -39,7 +39,7 @@
   h3 {
     color: #0a1a0f;
     padding: 4px 11px;
-    background-color: $yellow;
+    background-color: $goldenYellow;
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
@@ -54,7 +54,7 @@
       color: #fff;
     }
     span:nth-child(2) {
-      color: $yellow;
+      color: $goldenYellow;
     }
   }
 
@@ -63,17 +63,91 @@
   }
 }
 
-.records {
+.recordes {
   display: flex;
   gap: clamp(24px, 4vw, 48px);
 
   h2 {
-    color: $yellow;
+    color: $goldenYellow;
     font-size: 2.5rem;
   }
 
   p {
     color: #6a8a6a;
+  }
+}
+
+.titulos {
+  display: flex;
+  flex-direction: column;
+  padding: $paddingGlobal;
+  background-color: $fundoSection;
+  border-bottom: solid 1px #1a3a22;
+
+  .tituloSection {
+    font-size: 1.125rem;
+    padding-left: 9px;
+    @include barraLateral();
+
+    h2 {
+      color: #fff;
+    }
+  }
+}
+
+.cardsConquistas {
+  display: flex;
+  gap: 12px;
+  justify-content: space-around;
+  padding: 20px 0;
+
+  .cardConquista {
+    width: clamp(120px, 15vw, 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 12px;
+    border-radius: 16px;
+    border: solid 1px $bordaCard;
+
+    .iconeConquista {
+      width: clamp(20px, 3vw, 32px);
+      height: auto;
+    }
+
+    .competicao {
+      color: $sageGreen;
+      font-size: 0.75rem;
+    }
+
+    h3 {
+      color: $goldenYellow;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .anoConquista {
+      color: #4a6a4a;
+    }
+  }
+}
+
+.lendas {
+  display: flex;
+  flex-direction: column;
+  padding: $paddingGlobal;
+  background-color: $fundoSection;
+  border-bottom: solid 1px #1a3a22;
+
+  .tituloSection {
+    font-size: 1.125rem;
+    padding-left: 9px;
+    @include barraLateral();
+
+    h2 {
+      color: #fff;
+    }
   }
 }
 
@@ -83,7 +157,7 @@
     gap: 32px;
   }
 
-  .boxText {
+  .textosHome {
     width: 100%;
   }
 
@@ -94,10 +168,19 @@
       width: clamp(120px, 40vw, 200px);
     }
   }
+
+  .cardsConquistas {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .cardConquista {
+      width: clamp(120px, 40vw, 180px);
+    }
+  }
 }
 
 @media (max-width: 480px) {
-  .boxText {
+  .textosHome {
     h1 {
       font-size: clamp(2rem, 10vw, 2.5rem);
     }
@@ -107,9 +190,19 @@
     }
   }
 
-  .records {
+  .recordes {
     h2 {
       font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+  }
+
+  .cardsConquistas {
+    flex-direction: column;
+    align-items: center;
+
+    .cardConquista {
+      width: 100%;
+      max-width: 280px;
     }
   }
 }
