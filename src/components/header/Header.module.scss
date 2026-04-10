@@ -9,7 +9,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: solid 2px $yellow;
+  border-bottom: solid 2px $goldenYellow;
 }
 
 .headerLogo {
@@ -27,7 +27,7 @@
     }
 
     h1 {
-      color: $yellow;
+      color: $goldenYellow;
       font-size: clamp(0.875rem, 2vw, 1.125rem);
       margin: 0;
     }
@@ -45,13 +45,13 @@
     font-size: clamp(0.8rem, 1.5vw, 1rem);
 
     &:hover {
-      color: $yellow;
+      color: $goldenYellow;
     }
   }
 
   .linkAtivo {
-    color: $yellow;
-    border-bottom: 2px solid $yellow;
+    color: $goldenYellow;
+    border-bottom: 2px solid $goldenYellow;
   }
 }
 
