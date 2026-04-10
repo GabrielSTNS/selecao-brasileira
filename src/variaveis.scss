@@ -1,1 +1,24 @@
-$yellow: #f5c800;
+/* Cores que se repetem por todo o projeto */
+$goldenYellow: #f5c800;
+$sageGreen: #6a8a6a;
+$bordaCard: #1e3d28;
+$fundoSection: #0a1a0f;
+
+/* Padding global, para altura e largura do conteúdo, utilizado para estilizar as seções dentro da tag main */
+$paddingGlobal: clamp(40px, 6vh, 80px) clamp(32px, 8vw, 120px);
+
+/* MixIn para criação da barra lateral dos títulos */
+@mixin barraLateral($cor: $goldenYellow, $largura: 3px, $altura: 70%) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 70%;
+    background-color: $goldenYellow;
+    border-radius: 999px;
+  }
+}
