@@ -69,11 +69,11 @@
 
   h2 {
     color: $goldenYellow;
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
   }
 
   p {
-    color: #6a8a6a;
+    color: $sageGreen;
   }
 }
 
@@ -110,6 +110,11 @@
     padding: 12px;
     border-radius: 16px;
     border: solid 1px $bordaCard;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: rgba(245, 196, 0, 0.1);
+      border: solid 1px $goldenYellow;
+    }
 
     .iconeConquista {
       width: clamp(20px, 3vw, 32px);
@@ -123,7 +128,7 @@
 
     h3 {
       color: $goldenYellow;
-      font-size: 2.5rem;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
       font-weight: bold;
     }
 
@@ -139,6 +144,7 @@
   padding: $paddingGlobal;
   background-color: $fundoSection;
   border-bottom: solid 1px #1a3a22;
+  gap: 12px;
 
   .tituloSection {
     font-size: 1.125rem;
@@ -148,6 +154,47 @@
     h2 {
       color: #fff;
     }
+  }
+
+  .cardsLendas {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+
+    .cardLenda {
+      width: clamp(160px, 20vw, 250px);
+      height: clamp(80px, 10vw, 110px);
+      display: flex;
+      justify-content: flex-start;
+      gap: 12px;
+      padding: 16px;
+      align-items: center;
+      border: solid 1px $bordaCard;
+      border-radius: 8px;
+
+      img {
+        border-radius: 50%;
+        border: solid 3px $goldenYellow;
+        object-fit: cover;
+        object-position: center top;
+        width: clamp(50px, 8vw, 80px);
+        height: clamp(50px, 8vw, 80px);
+      }
+    }
+  }
+}
+
+.infoJogador {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  h3 {
+    color: #fff;
+    font-size: 1rem;
+  }
+  p {
+    color: $sageGreen;
+    font-size: 0.7rem;
   }
 }
 
@@ -177,6 +224,17 @@
       width: clamp(120px, 40vw, 180px);
     }
   }
+
+  .lendas {
+    .cardsLendas {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .cardLenda {
+        width: clamp(140px, 45vw, 200px);
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -190,12 +248,6 @@
     }
   }
 
-  .recordes {
-    h2 {
-      font-size: clamp(1.5rem, 5vw, 2.5rem);
-    }
-  }
-
   .cardsConquistas {
     flex-direction: column;
     align-items: center;
@@ -203,6 +255,20 @@
     .cardConquista {
       width: 100%;
       max-width: 280px;
+    }
+  }
+
+  .lendas {
+    .cardsLendas {
+      flex-direction: column;
+      align-items: center;
+
+      .cardLenda {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        gap: 30px;
+      }
     }
   }
 }
