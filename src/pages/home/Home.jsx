@@ -5,6 +5,10 @@ import medalhaCA from "../../assets/img/medalhaCA.png";
 import medalhaCC from "../../assets/img/medalhaCC.png";
 import medalhaOlimpiadas from "../../assets/img/medalhaOlimpiadas.png";
 import estrelaPan from "../../assets/img/estrelaPan.png";
+import pele from "../../assets/img/pele.jpg";
+import ronaldo from "../../assets/img/ronaldo.jpg";
+import garrincha from "../../assets/img/garrincha.jpg";
+import zico from "../../assets/img/zico.jpg";
 
 const Home = () => {
   const conquistas = [
@@ -33,7 +37,7 @@ const Home = () => {
       anos: "Rio · Tóquio",
     },
     {
-      src: trofeuCopa,
+      src: estrelaPan,
       competicao: "PAN-AMERICANO",
       titulo: 3,
       anos: "Múltiplas edições",
@@ -41,10 +45,10 @@ const Home = () => {
   ];
 
   const lendas = [
-    { nomeAbreviado: "PL", nome: "Pelé", posicao: "ATACANTE", numero: "10" },
-    { nomeAbreviado: "RO", nome: "Ronaldo", posicao: "ATACANTE", numero: "9" },
-    { nomeAbreviado: "ZC", nome: "Zico", posicao: "Meia", numero: "10" },
-    { nomeAbreviado: "RC", nome: "Ronaldinho", posicao: "Meia", numero: "10" },
+    { jogador: pele, nome: "Pelé", posicao: "ATACANTE" },
+    { jogador: garrincha, nome: "Garrincha", posicao: "PONTA-DIREITA" },
+    { jogador: ronaldo, nome: "Ronaldo", posicao: "ATACANTE" },
+    { jogador: zico, nome: "Zico", posicao: "MEIA" },
   ];
   return (
     <main className={s.main}>
@@ -98,11 +102,26 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <section className={s.lendas}>
+      <section className={s.lendas}>
         <div className={s.tituloSection}>
           <h2>LENDAS DA SELEÇÃO</h2>
         </div>
-      </section> */}
+        <div className={s.cardsLendas}>
+          {lendas.map((item, index) => (
+            <div key={index} className={s.cardLenda}>
+              <img
+                src={item.jogador}
+                alt={item.nome}
+                className={s.imgJogador}
+              />
+              <div className={s.infoJogador}>
+                <h3>{item.nome}</h3>
+                <p>{item.posicao}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
   );
 };
