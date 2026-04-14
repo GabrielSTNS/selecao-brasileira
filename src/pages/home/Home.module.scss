@@ -222,6 +222,10 @@
 
     .cardConquista {
       width: clamp(120px, 40vw, 180px);
+      &:hover {
+        background-color: transparent;
+        border: solid 1px $bordaCard;
+      }
     }
   }
 
